@@ -1,0 +1,3 @@
+S, ASB
+A, aAS, a, e
+B, SbS, A, bb
