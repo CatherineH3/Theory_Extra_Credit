@@ -1,0 +1,11 @@
+S0 --> SB | AS | TB
+S --> SB | AS | WB
+A --> a | ZS | VS
+B --> a | ZAS | ZS | XX | US
+Z --> a
+Y --> b
+X --> b
+W --> AS
+V --> ZA
+U --> SY
+T --> AS
