@@ -1,0 +1,68 @@
+Initial Input
+-------------------------------------------------------------------------
+S --> ASB
+A --> aAS | a | e
+B --> SbS | A | bb
+-------------------------------------------------------------------------
+
+Step 1: Add the starting produciton rule (ex: S0-->S)
+S0 --> S
+S --> ASB
+A --> aAS | a | e
+B --> SbS | A | bb
+
+Step 2: Remove all epsilon productions (ex: A-->e)
+S0 --> S
+S --> ASB | SB | AS | S
+A --> aAS | a | aS
+B --> SbS | A | bb
+
+Step 3: Replace all unit productions (ex: B-->A 
+S0 --> ASB | SB | AS
+S --> ASB | SB | AS
+A --> aAS | a | aS
+B --> SbS | bb | aAS | a | aS
+
+Step 4: Replace productions with mixed nonterminals and terminals (ex: aAS
+S0 --> ASB | SB | AS
+S --> ASB | SB | AS
+A --> a | ZAS | ZS
+B --> bb | a | SYS | ZAS | ZS
+Z --> a
+Y --> b
+
+Step 5: Replace productions with more than 2 terminals (B-->bb)
+S0 --> ASB | SB | AS
+S --> ASB | SB | AS
+A --> a | ZAS | ZS
+B --> a | SYS | ZAS | ZS | XX
+Z --> a
+Y --> b
+X --> b
+
+Step 6: Replace rules with more than 2 nonterminals (ex: S-->ASB)
+S0 --> SB | AS | TB
+S --> SB | AS | WB
+A --> a | ZS | VS
+B --> a | ZAS | ZS | XX | US
+Z --> a
+Y --> b
+X --> b
+W --> AS
+V --> ZA
+U --> SY
+T --> AS
+
+Final Results
+-------------------------------------------------------------------------Final results:
+S0 --> SB | AS | TB
+S --> SB | AS | WB
+A --> a | ZS | VS
+B --> a | ZAS | ZS | XX | US
+Z --> a
+Y --> b
+X --> b
+W --> AS
+V --> ZA
+U --> SY
+T --> AS
